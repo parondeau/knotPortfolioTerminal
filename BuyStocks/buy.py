@@ -31,8 +31,11 @@ def validateMe(cash):
 	array = []
 	array.append(raw_input('Ticker: '))
 	array.append(raw_input('Company Name: '))
-	array.append(raw_input('Number Of Shares: '))
 	price = validateCompany(array[0])
+	print "You have chosen: " + array[0]
+	print "It is currently priced at: $%i" % price
+	print "How many shares would you like to buy?"
+	array.append(raw_input('Number Of Shares: '))
 	array.append(price)
 	if((price == 0) or (int(array[2]) * price > (cash - 30)) or (array[2] == 0)):
 		print "EROR ERROR GET YOUR MOTHERS ERROR"

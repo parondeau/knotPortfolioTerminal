@@ -25,13 +25,14 @@ START_OVER     = 'restart'
 EXIT           = 'exit'
 
 def getInput():
-    sys.argv = raw_input("See your portfolio?( yes / buy / sell / start over (restart) ): ").split()
+    sys.argv = raw_input("See your portfolio?( yes / buy / sell / start over (restart) / exit): ").split()
     inputarray = sys.argv
     answer = inputarray[0]
     return answer
 
 #----------------------------------------------------------
 answer = getInput()
+exitProgram = False
 
 # show portfolio
 if(answer == SHOW_PORTFOLIO):
@@ -54,6 +55,14 @@ elif(answer == SELL_STOCKS):
 # empty the portfolio and reupdate the cash to zero
 elif(answer == START_OVER):
     startOver.cleanMeUpAndCallMeNancy()
+
+elif(answer == EXIT):
+	exitProgram = True
+
+if (exitProgram == False):
+	print "Thank you for using knotPortfolioTerminal App :)"
+	helperMethods.printStarBorder()
+	getInput()
 
 # 394 by 604
 # Thinking about these stocks. 
