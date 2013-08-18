@@ -13,7 +13,7 @@ def getPriceOfStock(symbol):
 		
 def percentGain(bookValue,marketValue):
 	if(marketValue > bookValue):
-		percent_gain = ((marketValue/bookValue)*1)*100
+		percent_gain = ((marketValue/bookValue)-1)*100
 		return percent_gain
 	else:
 		percent_loss = (1-(marketValue/bookValue))*100
